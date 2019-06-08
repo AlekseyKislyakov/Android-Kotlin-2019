@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lesson_2_Kislyakov</string>
+    <string name="start_item1">Start item1</string>
+    <string name="start_item2">Start item2</string>
+    <string name="choose_exercise">Choose exercise</string>
+    <string name="pushkins_verse"> Sorry, there is nothing</string>
+    <string name="button_text">Боль и страдание</string>
+</resources>

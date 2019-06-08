@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Домашка 2</string>
+    <string name="start_item1">Запустить упражнение 1</string>
+    <string name="start_item2">Запустить упражнение 2</string>
+    <string name="choose_exercise">Выберите упражнение</string>
+    <string name="pushkins_verse">  Воспоминаньями смущенный,\n
+        Исполнен сладкою тоской,\n
+        Сады прекрасные, под сумрак ваш священный\n
+        Вхожу с поникшею главой.</string>
+    <string name="button_text">Боль и страдание</string>
+</resources>
