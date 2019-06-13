@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Lesson_3_Kislyakov</string>
+    <string name="profileName">Личный профиль</string>
+    <string name="stringOwnData">Личные данные</string>
+    <string name="logout_header">Выйти из аккаунта</string>
+    <string name="region_header">Ваш регион</string>
+    <string name="login_header">Логин</string>
+    <string name="e_mail_header">E-mail</string>
+    <string name="surname_header">Фамилия</string>
+    <string name="name_header">Имя</string>
+    <string name="name_example">Василий</string>
+    <string name="surname_example">Антонов</string>
+    <string name="email_example">example@abc.net</string>
+    <string name="login_example">123456789123456789</string>
+    <string name="region_example">Мордовия</string>
+    <string name="profile_example">Карта №7894556\nСпециалист</string>
+</resources>

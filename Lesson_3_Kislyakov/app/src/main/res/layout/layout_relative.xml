@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textViewOwnData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/stringOwnData"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <RelativeLayout
+        android:id="@+id/layoutName"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_below="@+id/textViewOwnData">
+
+        <TextView
+            android:id="@+id/textViewNameHeader"
+            style="@style/HeaderTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/name_header" />
+
+        <TextView
+            android:id="@+id/textViewName"
+            style="@style/DescriptionTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewNameHeader"
+            android:layout_marginStart="16dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutSurname"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_below="@+id/layoutName">
+
+        <TextView
+            android:id="@+id/textViewSurnameHeader"
+            style="@style/HeaderTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/surname_header" />
+
+        <TextView
+            android:id="@+id/textViewSurname"
+            style="@style/DescriptionTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewSurnameHeader"
+            android:layout_marginStart="16dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutEmail"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_below="@+id/layoutSurname">
+
+        <TextView
+            android:id="@+id/textviewEmailHeader"
+            style="@style/HeaderTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/e_mail_header" />
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            style="@style/DescriptionTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textviewEmailHeader"
+            android:layout_marginStart="16dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutLogin"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_below="@+id/layoutEmail">
+
+        <TextView
+            android:id="@+id/textViewLoginHeader"
+            style="@style/HeaderTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/login_header" />
+
+        <TextView
+            android:id="@+id/textViewLogin"
+            style="@style/DescriptionTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewLoginHeader"
+            android:layout_marginStart="16dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutRegion"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_below="@+id/layoutLogin">
+
+        <TextView
+            android:id="@+id/textViewRegionHeader"
+            style="@style/HeaderTextStyle"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/region_header" />
+
+        <TextView
+            android:id="@+id/textViewRegion"
+            style="@style/DescriptionTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewRegionHeader"
+            android:layout_marginStart="16dp" />
+
+        <ImageView
+            android:id="@+id/imageViewChangeRegion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="24dp"
+            android:background="@drawable/ic_edit_selector" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageViewLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutRegion"
+        android:layout_alignParentStart="true"
+        android:layout_margin="24dp"
+        android:background="@drawable/ic_menu_exit_selector" />
+
+    <TextView
+        android:id="@+id/textViewLogout"
+        style="@style/DescriptionTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutRegion"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_toEndOf="@+id/imageViewLogout"
+        android:text="@string/logout_header" />
+
+</RelativeLayout>
