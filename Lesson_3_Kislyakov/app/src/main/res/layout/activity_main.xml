@@ -22,13 +22,14 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="16dp"
                 android:layout_marginTop="?attr/actionBarSize">
 
                 <View
                     android:id="@+id/myRectangleView"
                     android:layout_width="match_parent"
-                    android:layout_height="104dp"
-                    android:layout_margin="16dp"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
                     android:background="@drawable/white_rectangle"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -39,9 +40,7 @@
                     android:id="@+id/imageViewAvatar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_margin="16dp"
                     android:src="@drawable/img_profile_spechialist"
                     app:layout_constraintBottom_toBottomOf="@id/myRectangleView"
                     app:layout_constraintStart_toStartOf="@id/myRectangleView"
@@ -51,12 +50,15 @@
                     android:id="@+id/textViewProfile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_margin="16dp"
                     android:gravity="start|center_vertical"
                     android:textSize="16sp"
-                    tools:text="fvdfvdfvdfv\nfjvndfjvlk"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constrainedWidth="true"
+                    tools:text="fvdfvdfvdfv\nfjаиdncjhgchkgchcgcgcghgchgcgcgcgchhcgfjvlk"
                     app:layout_constraintBottom_toBottomOf="@+id/myRectangleView"
                     app:layout_constraintStart_toEndOf="@+id/imageViewAvatar"
+                    app:layout_constraintEnd_toEndOf="@id/myRectangleView"
                     app:layout_constraintTop_toTopOf="@+id/myRectangleView" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 

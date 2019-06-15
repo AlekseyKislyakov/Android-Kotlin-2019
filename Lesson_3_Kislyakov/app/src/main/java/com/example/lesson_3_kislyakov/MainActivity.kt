@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         imageViewChangeRegion.setOnClickListener{
             Toast.makeText(this, "Change region button", Toast.LENGTH_SHORT).show()
         }
-        imageViewLogout.setOnClickListener{
+        textViewLogout.setOnClickListener{
             Toast.makeText(this, "Logout button", Toast.LENGTH_SHORT).show()
         }
 

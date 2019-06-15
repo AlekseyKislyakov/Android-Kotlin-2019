@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string-array name="headers_base">
+        <item>Контакты УК и служб</item>
+        <item>Мои заявки</item>
+        <item>Памятка жителя А101</item>
+    </string-array>
+    <integer-array name="avatars_base">
+        <item>@drawable/ic_uk_contacts</item>
+        <item>@drawable/ic_request</item>
+        <item>@drawable/ic_about</item>
+    </integer-array>
+</resources>

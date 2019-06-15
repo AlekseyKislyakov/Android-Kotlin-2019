@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2016 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources>
+    <string-array name="headers">
+        <item>Квитанции</item>
+        <item>Счетчики</item>
+        <item>Рассрочка</item>
+        <item>Страхование</item>
+        <item>Интернет и ТВ</item>
+        <item>Домофон</item>
+        <item>Охрана</item>
+    </string-array>
+    <string-array name="descriptions">
+        <item>-40 080,55 ₽</item>
+        <item>Подайте показания</item>
+        <item>Сл. платеж 25.01.2018</item>
+        <item>Полис до 12.01.2019</item>
+        <item>Баланск 350 ₽</item>
+        <item>Подключен</item>
+        <item>Нет</item>
+    </string-array>
+    <integer-array name="avatars">
+        <item>@drawable/ic_bill</item>
+        <item>@drawable/ic_counter</item>
+        <item>@drawable/ic_installment</item>
+        <item>@drawable/ic_insurance</item>
+        <item>@drawable/ic_tv</item>
+        <item>@drawable/ic_homephone</item>
+        <item>@drawable/ic_guard</item>
+    </integer-array>
+</resources>
