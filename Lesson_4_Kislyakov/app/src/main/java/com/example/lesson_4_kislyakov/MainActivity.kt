@@ -1,27 +1,26 @@
 package com.example.lesson_4_kislyakov
 
 import android.os.Bundle
-import android.widget.GridLayout.HORIZONTAL
-import android.widget.GridLayout.VERTICAL
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
+
+    var elements: ArrayList<Tile> = ArrayList()
+
+    private val TILE_SIZE: Int = 1
+    private val ROW_SIZE: Int = 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //this is necessary to programmatically set vector drawables
-        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         setContentView(R.layout.activity_main)
 
+        addData()
         //set up toolbar
         toolbar.inflateMenu(R.menu.menu_main)
 
@@ -36,17 +35,17 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
             } else if (it.itemId == R.id.itemToolbarInfo) {
                 AlertDialog.Builder(this)
-                        .setTitle("Info")
-                        .setMessage("Hello")
-                        .setPositiveButton("hi", null)
-                        .create()
-                        .show()
+                    .setTitle("Info")
+                    .setMessage("Hello")
+                    .setPositiveButton("hi", null)
+                    .create()
+                    .show()
             }
             true
         }
 
         //create adapter with 10 items
-        val adapter: TileAdapter = TileAdapter(10, this)
+        val adapter = TileAdapter(elements)
 
         //set onClickListener to items in recyclerview
         //call is in the adapter function
@@ -57,26 +56,39 @@ class MainActivity : AppCompatActivity() {
         //set up layout manager with 2 columns
         val layoutManager = GridLayoutManager(this, 2)
 
-        //set up sizes for the items. 2 is for guard and base items because the are to be twice as width
         layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
                 return when (adapter.getItemViewType(position)) {
-                    adapter.DESCRIPTION_RED -> 1
-                    adapter.DEFAULT -> 1
-                    adapter.ONEINTWO -> 2
-                    adapter.BASECELL -> 2
+                    adapter.ROW_SIZE -> 2
+                    adapter.TILE_SIZE -> 1
                     else -> -1
                 }
             }
         }
 
         //add decorations
-        recyclerViewTile.addItemDecoration(ItemDecorationAlbumColumns(
+        recyclerViewTile.addItemDecoration(
+            SearchResultItemDecoration(
                 resources.getDimensionPixelSize(R.dimen.photos_list_spacing),
-            2))
+                2, elements.size
+            )
+        )
 
         //set up recyclerview
         recyclerViewTile.layoutManager = layoutManager
         recyclerViewTile.adapter = adapter
+    }
+
+    fun addData() {
+        elements.add(Tile("Квитанции", "-40 080,55 \u20BD", R.drawable.ic_bill, TILE_SIZE, true))
+        elements.add(Tile("Счетчики", "Подайте показания", R.drawable.ic_counter, TILE_SIZE, true))
+        elements.add(Tile("Рассрочка", "Сл. платеж 25.01.2018", R.drawable.ic_installment, TILE_SIZE, false))
+        elements.add(Tile("Страхование", "Полис до 12.01.2019", R.drawable.ic_insurance, TILE_SIZE, false))
+        elements.add(Tile("Интернет и ТВ", "Баланск 350 \u20BD", R.drawable.ic_tv, TILE_SIZE, false))
+        elements.add(Tile("Домофон", "Подключен", R.drawable.ic_homephone, TILE_SIZE, false))
+        elements.add(Tile("Охрана", "Нет", R.drawable.ic_guard, ROW_SIZE, false))
+        elements.add(Tile("Контакты УК и служб", null, R.drawable.ic_uk_contacts, ROW_SIZE, false))
+        elements.add(Tile("Мои заявки", null, R.drawable.ic_request, ROW_SIZE, false))
+        elements.add(Tile("Памятка жителя А101", null, R.drawable.ic_about, ROW_SIZE, false))
     }
 }
