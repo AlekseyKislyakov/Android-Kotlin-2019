@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Activity1"
+        tools:context=".activities.Activity1"
         android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -28,8 +28,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonGoto4From1"
-            android:background="@color/colorPrimary"
             android:text="@string/goto_activity_4_from_1"
+            android:layout_margin="16dp"
+            android:layout_gravity="center"
+            style="@style/ButtonStyle"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonGoto2From1"
+            android:text="@string/goto_activity_2_from_1"
+            android:layout_margin="16dp"
+            android:layout_gravity="center"
+            style="@style/ButtonStyle"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonGoto6From1"
+            android:text="@string/goto_activity_6_from_1"
             android:layout_margin="16dp"
             android:layout_gravity="center"
             style="@style/ButtonStyle"/>

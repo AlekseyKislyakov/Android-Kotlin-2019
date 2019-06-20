@@ -5,7 +5,7 @@ import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class SearchResultItemDecoration(private val space: Int, private val NUMBER_OF_COLUMNS: Int, private val NUMBER_OF_ITEMS: Int) :
+class SearchResultItemDecoration(private val space: Int, private val NUMBER_OF_COLUMNS: Int) :
     RecyclerView.ItemDecoration() {
 
     override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
@@ -23,22 +23,27 @@ class SearchResultItemDecoration(private val space: Int, private val NUMBER_OF_C
         val spanSize = grid.spanSizeLookup.getSpanSize(position)
 
         if (spanSize == NUMBER_OF_COLUMNS) {
+            if (position == 0) {
+                outRect?.top = space
+            }
             outRect?.right = space
         } else {
             var allSpanSize = 0
             for (i: Int in IntRange(0, position)) {
                 allSpanSize += grid.spanSizeLookup.getSpanSize(i)
+                if(position <= spanSize){
+                    outRect?.top = space
+                }
             }
             val currentModuloResult = allSpanSize % NUMBER_OF_COLUMNS
             if (currentModuloResult == 0) {
+
                 outRect?.right = space
             }
         }
         outRect?.left = space
-        outRect?.top = space
+        outRect?.bottom = space
 
-        if (position == NUMBER_OF_ITEMS - 1) {
-            outRect?.bottom = space
-        }
+
     }
 }

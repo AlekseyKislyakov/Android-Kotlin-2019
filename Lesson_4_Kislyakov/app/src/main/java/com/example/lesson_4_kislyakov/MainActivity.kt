@@ -12,9 +12,6 @@ class MainActivity : AppCompatActivity() {
 
     var elements: ArrayList<Tile> = ArrayList()
 
-    private val TILE_SIZE: Int = 1
-    private val ROW_SIZE: Int = 2
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -70,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         recyclerViewTile.addItemDecoration(
             SearchResultItemDecoration(
                 resources.getDimensionPixelSize(R.dimen.photos_list_spacing),
-                2, elements.size
+                2
             )
         )
 
@@ -80,15 +77,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun addData() {
-        elements.add(Tile("Квитанции", "-40 080,55 \u20BD", R.drawable.ic_bill, TILE_SIZE, true))
-        elements.add(Tile("Счетчики", "Подайте показания", R.drawable.ic_counter, TILE_SIZE, true))
-        elements.add(Tile("Рассрочка", "Сл. платеж 25.01.2018", R.drawable.ic_installment, TILE_SIZE, false))
-        elements.add(Tile("Страхование", "Полис до 12.01.2019", R.drawable.ic_insurance, TILE_SIZE, false))
-        elements.add(Tile("Интернет и ТВ", "Баланск 350 \u20BD", R.drawable.ic_tv, TILE_SIZE, false))
-        elements.add(Tile("Домофон", "Подключен", R.drawable.ic_homephone, TILE_SIZE, false))
-        elements.add(Tile("Охрана", "Нет", R.drawable.ic_guard, ROW_SIZE, false))
-        elements.add(Tile("Контакты УК и служб", null, R.drawable.ic_uk_contacts, ROW_SIZE, false))
-        elements.add(Tile("Мои заявки", null, R.drawable.ic_request, ROW_SIZE, false))
-        elements.add(Tile("Памятка жителя А101", null, R.drawable.ic_about, ROW_SIZE, false))
+        //firstly add detail items
+        elements.add(TileDetail("Квитанции", "-40 080,55 \u20BD", R.drawable.ic_bill, true))
+        elements.add(TileDetail("Счетчики", "Подайте показания", R.drawable.ic_counter,  true))
+        elements.add(TileDetail("Рассрочка", "Сл. платеж 25.01.2018", R.drawable.ic_installment,  false))
+        elements.add(TileDetail("Страхование", "Полис до 12.01.2019", R.drawable.ic_insurance,  false))
+        elements.add(TileDetail("Интернет и ТВ", "Баланск 350 \u20BD", R.drawable.ic_tv,  false))
+        elements.add(TileDetail("Домофон", "Подключен", R.drawable.ic_homephone,  false))
+        elements.add(TileDetail("Охрана", "Нет", R.drawable.ic_guard,  false))
+
+        //add base items
+        elements.add(TileBase("Контакты УК и служб", null, R.drawable.ic_uk_contacts,  false))
+        elements.add(TileBase("Мои заявки", null, R.drawable.ic_request,  false))
+        elements.add(TileBase("Памятка жителя А101", null, R.drawable.ic_about,  false))
     }
 }

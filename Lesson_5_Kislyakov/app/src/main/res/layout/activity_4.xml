@@ -1,10 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Activity4">
+        tools:context=".activities.Activity4"
+        android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayoutActivity4"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarActivity4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:navigationIcon="?attr/homeAsUpIndicator"
+                app:title="@string/title_activity_4">
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+            android:id="@+id/textViewShowTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"/>
+
+    <Button
+            android:id="@+id/buttonGoto4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/goto_4_again"/>
+
+</LinearLayout>

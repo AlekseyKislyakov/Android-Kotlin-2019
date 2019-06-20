@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Lesson_5_Kislyakov</string>
+    <string name="title_activity_1">Activity 1</string>
+    <string name="title_activity_2">Activity 2</string>
+    <string name="title_activity_3">Activity 3</string>
+    <string name="title_activity_4">Activity 4</string>
+    <string name="title_activity_5">Activity 5</string>
+    <string name="goto_activity_4_from_1">Goto 4</string>
+    <string name="goto_4_again">Goto 4 again</string>
+    <string name="error_message">Something went wrong!</string>
+    <string name="goto_activity_3_from_2">Goto 3</string>
+    <string name="goto_activity_1_from_3">Goto 1</string>
+    <string name="goto_activity_2_from_1">Goto 2</string>
+    <string name="goto_activity_5_from_3">Start 5 for result</string>
+    <string name="deliver_result">Deliver result</string>
+    <string name="deliver_string_hint">Put the text to deliver here</string>
+    <string name="save_data_to_bundle">Save data</string>
+    <string name="empty_data">NOTHING YET</string>
+    <string name="goto_activity_6_from_1">Goto 6</string>
+    <string name="services_title">Услуги</string>
+    <string name="services_header">Услуги</string>
+    <string name="services_all">ВCE</string>
+    <string name="toolbar_text">Услуги управляющей компании  будут доступны после сдачи дома</string>
+    <string name="add_service">Предложить услугу</string>
 </resources>

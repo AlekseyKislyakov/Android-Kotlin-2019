@@ -36,9 +36,23 @@ class TileAdapter(val elements: ArrayList<Tile>) : RecyclerView.Adapter<Recycler
         return elements.size
     }
 
+    fun getDetailTypeCount(): Int{
+        var result: Int = 0
+        elements.forEach { it ->
+            if(it is TileDetail)
+                result++
+        }
+        return result
+    }
+
     override fun getItemViewType(position: Int): Int {
-        // условие для определения айтем какого типа выводить в конкретной позиции
-        return elements[position].size
+        return if(elements[position] is TileBase) // if tile is base type, it will take size 2
+            ROW_SIZE
+        else if (elements[position] is TileDetail && getDetailTypeCount()%2 == 0) // if odd number of items, every Tile has its pair
+            TILE_SIZE
+        else if(position == getDetailTypeCount()-1) { // if even number if tiles, for one element create row (size = 2)
+            ROW_SIZE
+        } else TILE_SIZE // these are tiles that have pair so size = 1
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
