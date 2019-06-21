@@ -17,7 +17,7 @@ class RowsAdapter(val elements: ArrayList<Row>) : RecyclerView.Adapter<RecyclerV
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.horizontal_row, null)
+        val view = inflater.inflate(R.layout.horizontal_row, parent, false)
         return RowViewHolder(view)
     }
 

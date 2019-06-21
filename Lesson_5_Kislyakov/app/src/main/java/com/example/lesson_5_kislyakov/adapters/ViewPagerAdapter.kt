@@ -13,7 +13,7 @@ import com.example.lesson_5_kislyakov.R
 
 class ViewPagerAdapter(private val context: Context) : PagerAdapter() {
     private var layoutInflater: LayoutInflater? = null
-    val arrayUris = arrayOf("http://www.theatreglas.ru/uploads/2016/02/Kreml.jpg",
+    private val arrayUris = arrayOf("https://c.ndtvimg.com/3bho04a8_indian-railways-pixabay-650_625x300_13_August_18.jpg",
             "https://cdn-st1.rtr-vesti.ru/p/xw_1411909.jpg",
             "https://www.svoiludi.ru/images/tb/203/paris-1240083454-ib_w687h357.jpg")
 
@@ -28,13 +28,13 @@ class ViewPagerAdapter(private val context: Context) : PagerAdapter() {
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val v = layoutInflater!!.inflate(R.layout.viewpager_layout, null)
-        val image = v.findViewById<View>(R.id.imageViewViewPager) as ImageView
+        val imageView = v.findViewById<View>(R.id.imageViewViewPager) as ImageView
 
         Glide.with(container)
                 .load(arrayUris[position])
-                .into(image)
+                .into(imageView)
 
-        image.setOnClickListener {
+        imageView.setOnClickListener {
             Toast.makeText(context, "Viewpager $position", Toast.LENGTH_SHORT).show()
         }
 

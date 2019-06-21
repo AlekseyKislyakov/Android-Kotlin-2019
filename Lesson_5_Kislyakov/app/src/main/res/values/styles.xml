@@ -9,13 +9,14 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/colorPaleGrey</item>
         <item name="android:colorBackground">@color/white</item>
-
         <item name="colorControlNormal">@color/colorBlack</item>
         <item name="android:textColorPrimary">@color/colorBlack</item>
+        <item name="android:windowTranslucentStatus">true</item>
 
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
 
     <style name="ButtonStyle">
         <item name="android:color">#888888</item>

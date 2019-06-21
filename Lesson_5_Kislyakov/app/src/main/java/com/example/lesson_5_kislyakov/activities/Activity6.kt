@@ -19,12 +19,13 @@ import com.example.lesson_5_kislyakov.adapters.ViewPagerAdapter
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_6.*
 
+
+
 class Activity6 : AppCompatActivity() {
 
     companion object {
         fun createInstance(context: Context): Intent {
-            val intent = Intent(context, Activity6::class.java)
-            return intent
+            return Intent(context, Activity6::class.java)
         }
     }
 
@@ -32,6 +33,8 @@ class Activity6 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_6)
+
+        // in Activity's onCreate() for instance
 
         Glide.with(this)
                 .load("https://img4.goodfon.ru/wallpaper/nbig/5/83/dom-pole-sumerki.jpg")
@@ -51,7 +54,7 @@ class Activity6 : AppCompatActivity() {
         //create element array for recyclerview
         val elements: ArrayList<Row> = ArrayList()
         elements.add(Row("Царь пышка", "Скидка 10% на выпечку по коду", "Лермонтовский пр, 52, МО №1",
-                "https://cheese-cake.ru/DesertImg/kruassan-klassicheskij-65p-0.jpg"))
+                "https://themoscowcity.com/local/templates/moscow_city/assets/images/bg/moscow-product.png"))
         elements.add(Row("Химчистка «Май?»", "Скидка 5% на химчистку пальто", "Лермонтовский пр, 48",
                 "https://cdn.icon-icons.com/icons2/387/PNG/256/Boxy-Calculons-Evil-Half-Brother-icon-256_37836.png"))
         elements.add(Row("Шаверма У Ашота", "При покупке шавермы, фалафель бесплатно", "Лермонтовский пр, 52, МО №1",
@@ -72,8 +75,6 @@ class Activity6 : AppCompatActivity() {
         //below is implementation of page indicator
         val dotscount = adapterViewPager.count
         val dots = arrayOfNulls<ImageView>(dotscount)
-        var viewPagerPosition = 0
-
 
         // add dots for indicator
         for (i in 0 until dotscount) {
@@ -101,7 +102,6 @@ class Activity6 : AppCompatActivity() {
                     dots[j]?.setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.nonactive_dot))
                 }
                 dots[position]?.setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.active_dot))
-                viewPagerPosition = position
             }
 
             override fun onPageSelected(position: Int) {
