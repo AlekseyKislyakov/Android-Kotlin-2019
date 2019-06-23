@@ -36,13 +36,8 @@ class TileAdapter(val elements: ArrayList<Tile>) : RecyclerView.Adapter<Recycler
         return elements.size
     }
 
-    fun getDetailTypeCount(): Int{
-        var result: Int = 0
-        elements.forEach { it ->
-            if(it is TileDetail)
-                result++
-        }
-        return result
+    private fun getDetailTypeCount(): Int{
+        return elements.count { it is TileDetail }
     }
 
     override fun getItemViewType(position: Int): Int {

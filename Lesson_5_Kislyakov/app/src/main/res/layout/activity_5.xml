@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".activities.Activity5"
-        android:orientation="vertical">
-
-    <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayoutActivity5"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize">
-
-        <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbarActivity5"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:navigationIcon="?attr/homeAsUpIndicator"
-                app:title="@string/title_activity_5">
-
-        </androidx.appcompat.widget.Toolbar>
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/editTextDeliverResult"
-            android:hint="@string/deliver_string_hint"
-            android:layout_margin="16dp"
-            android:layout_gravity="center"/>
-
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/buttonDeliverResult"
-            android:text="@string/deliver_result"
-            android:layout_margin="16dp"
-            android:layout_gravity="center"
-            style="@style/ButtonStyle"/>
-
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textViewSaveData"
-            android:text="@string/empty_data"
-            android:layout_marginTop="30dp"
-            android:layout_gravity="center"/>
-
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/buttonSaveData"
-            android:text="@string/save_data_to_bundle"
-            android:layout_margin="16dp"
-            android:layout_gravity="center"
-            style="@style/ButtonStyle"/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	android:orientation="vertical"
+	tools:context=".activities.Activity5">
+	
+	<com.google.android.material.appbar.AppBarLayout
+		android:id="@+id/appBarLayoutActivity5"
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize">
+		
+		<androidx.appcompat.widget.Toolbar
+			android:id="@+id/toolbarActivity5"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			app:navigationIcon="?attr/homeAsUpIndicator"
+			app:title="@string/title_activity_5">
+		
+		</androidx.appcompat.widget.Toolbar>
+	
+	</com.google.android.material.appbar.AppBarLayout>
+	
+	<EditText
+		android:id="@+id/editTextDeliverResult"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:layout_margin="16dp"
+		android:hint="@string/deliver_string_hint" />
+	
+	<Button
+		android:id="@+id/buttonDeliverResult"
+		style="@style/ButtonStyle"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:layout_margin="16dp"
+		android:text="@string/deliver_result" />
+	
+	<TextView
+		android:id="@+id/textViewSaveData"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:layout_marginTop="30dp"
+		android:text="@string/empty_data" />
+	
+	<Button
+		android:id="@+id/buttonSaveData"
+		style="@style/ButtonStyle"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:layout_margin="16dp"
+		android:text="@string/save_data_to_bundle" />
 
 </LinearLayout>

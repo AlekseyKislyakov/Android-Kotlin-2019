@@ -6,16 +6,16 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.example.lesson_5_kislyakov.models.Data
 import com.example.lesson_5_kislyakov.R
+import com.example.lesson_5_kislyakov.models.Data
 import kotlinx.android.synthetic.main.activity_5.*
 
-class Activity5 : AppCompatActivity() {
+abstract class Activity5 : AppCompatActivity() {
 
     val STRING_OBJECT_TITLE = "LOL"
     val DATA_OBJECT_KEY = "myData"
 
-    var data: Data = Data("")
+    var data: Data? = null
 
     companion object {
         fun createInstance(context: Context): Intent {
@@ -29,11 +29,11 @@ class Activity5 : AppCompatActivity() {
         setContentView(R.layout.activity_5)
         Log.d("myTag", "ONCREATE")
 
-        if(savedInstanceState != null){
+        if (savedInstanceState != null) {
             val temp: Data? = savedInstanceState.getParcelable<Data>(DATA_OBJECT_KEY)
-            if(temp != null){
+            if (temp != null) {
                 data = temp
-                textViewSaveData.text = data.value
+                textViewSaveData.text = data?.value
             }
         } else {
             Log.d("myTag", "BUNDLE IS NULL")
@@ -51,14 +51,14 @@ class Activity5 : AppCompatActivity() {
         }
 
         buttonSaveData.setOnClickListener {
-            data.value = editTextDeliverResult.text.toString()
-            textViewSaveData.text = data.value
+            data?.value = editTextDeliverResult.text.toString()
+            textViewSaveData.text = data?.value
         }
     }
 
     public override fun onSaveInstanceState(savedInstanceState: Bundle) {
         super.onSaveInstanceState(savedInstanceState)
-        if(data.value != ""){
+        if (data != null) {
             savedInstanceState.putParcelable(DATA_OBJECT_KEY, data)
         }
 

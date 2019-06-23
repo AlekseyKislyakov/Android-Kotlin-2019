@@ -2,7 +2,9 @@ package com.example.lesson_5_kislyakov.activities
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.os.Bundle
+import android.util.TypedValue
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -19,16 +21,15 @@ import com.example.lesson_5_kislyakov.adapters.ViewPagerAdapter
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_6.*
 
-
-
 class Activity6 : AppCompatActivity() {
+
+    val MARGIN_DIP = 8 // margin for the indicator dots
 
     companion object {
         fun createInstance(context: Context): Intent {
             return Intent(context, Activity6::class.java)
         }
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -84,7 +85,8 @@ class Activity6 : AppCompatActivity() {
 
             val params = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
 
-            params.setMargins(8, 0, 8, 0)
+
+            params.setMargins(MARGIN_DIP.px, 0, MARGIN_DIP.px, 0)
 
             linearLayoutSliderDots.addView(dots[i], params)
 
@@ -111,4 +113,7 @@ class Activity6 : AppCompatActivity() {
         })
 
     }
+
+    val Int.px: Int
+        get() = (this * Resources.getSystem().displayMetrics.density).toInt()
 }

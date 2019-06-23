@@ -10,16 +10,16 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:fitsSystemWindows="true"
-		app:statusBarScrim="@android:color/transparent"
-		app:expanded="true">
+		app:expanded="true"
+		app:statusBarScrim="@android:color/transparent">
 		
 		<com.google.android.material.appbar.CollapsingToolbarLayout
 			android:id="@+id/collapsingToolbarServices"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			app:statusBarScrim="@android:color/transparent"
-			app:layout_scrollFlags="scroll|exitUntilCollapsed"
 			android:fitsSystemWindows="true"
+			app:layout_scrollFlags="scroll|exitUntilCollapsed"
+			app:statusBarScrim="@android:color/transparent"
 			app:titleEnabled="false">
 			
 			<FrameLayout
@@ -32,11 +32,11 @@
 				<ImageView
 					android:id="@+id/imageViewToolbarBackground"
 					android:layout_width="match_parent"
-					android:layout_height="236dp"
+					android:layout_height="250dp"
 					android:background="@color/colorPaleGrey"
 					android:scaleType="fitCenter" />
 				
-				<TextView
+				<androidx.appcompat.widget.AppCompatTextView
 					android:id="@+id/textViewToolbarBackground"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
@@ -44,11 +44,11 @@
 					android:layout_marginStart="50dp"
 					android:layout_marginEnd="50dp"
 					android:layout_marginBottom="40dp"
-					android:drawableTop="@drawable/ic_logo_small"
 					android:drawablePadding="14dp"
 					android:gravity="center"
 					android:text="@string/toolbar_text"
-					android:textColor="@color/colorPaleGrey" />
+					android:textColor="@color/colorPaleGrey"
+					app:drawableTopCompat="@drawable/ic_logo_small" />
 			
 			</FrameLayout>
 			
@@ -56,8 +56,8 @@
 				android:id="@+id/toolbar"
 				android:layout_width="match_parent"
 				android:layout_height="?attr/actionBarSize"
-				app:layout_collapseMode="pin"
 				android:fitsSystemWindows="false"
+				app:layout_collapseMode="pin"
 				app:title="@string/services_title"
 				app:titleTextColor="@color/colorPaleGrey" />
 		
@@ -80,7 +80,6 @@
 				android:id="@+id/constraintLayoutServices"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="8dp"
 				android:background="?attr/selectableItemBackground">
 				
 				<TextView
@@ -88,8 +87,12 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_margin="16dp"
+					android:layout_marginEnd="8dp"
 					android:text="@string/services_header"
 					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintEnd_toStartOf="@+id/textViewServicesAll"
+					app:layout_constraintHorizontal_chainStyle="spread_inside"
+					app:layout_constraintHorizontal_bias="0"
 					app:layout_constraintStart_toStartOf="parent"
 					app:layout_constraintTop_toTopOf="parent" />
 				
@@ -98,41 +101,49 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_margin="16dp"
+					android:layout_marginEnd="8dp"
 					android:text="@string/services_all"
 					android:textColor="@color/colorPrimary"
 					app:layout_constraintBottom_toBottomOf="parent"
 					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintHorizontal_bias="1"
+					app:layout_constraintStart_toEndOf="@+id/textViewServices"
 					app:layout_constraintTop_toTopOf="parent" />
 			
 			
 			</androidx.constraintlayout.widget.ConstraintLayout>
 			
-			<LinearLayout
+			<androidx.cardview.widget.CardView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_margin="8dp"
-				android:background="#eeeef0">
+				app:cardCornerRadius="4dp">
 				
-				<TextView
-					android:id="@+id/textViewAddService"
+				<FrameLayout
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:background="?attr/selectableItemBackground"
-					android:drawableStart="@drawable/ic_partnership"
-					android:drawablePadding="14dp"
-					android:fontFamily="sans-serif-medium"
-					android:gravity="center_vertical|start"
-					android:padding="16dp"
-					android:text="@string/add_service"
-					android:textSize="16sp"
-					android:textStyle="normal" />
-			</LinearLayout>
+					android:background="@color/colorPaleGrey">
+					
+					<androidx.appcompat.widget.AppCompatTextView
+						android:id="@+id/textViewAddService"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:background="?attr/selectableItemBackground"
+						android:drawablePadding="14dp"
+						android:fontFamily="sans-serif-medium"
+						android:gravity="center_vertical|start"
+						android:padding="16dp"
+						android:text="@string/add_service"
+						android:textSize="16sp"
+						android:textStyle="normal"
+						app:drawableLeftCompat="@drawable/ic_partnership" />
+				</FrameLayout>
+			</androidx.cardview.widget.CardView>
 			
 			<androidx.recyclerview.widget.RecyclerView
 				android:id="@+id/recyclerViewServices"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:background="#0000ff" />
+				android:layout_height="wrap_content" />
 			
 			<LinearLayout
 				android:layout_width="match_parent"
