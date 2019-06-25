@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/cardViewBaseInfo"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="#ff0000">
+	
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="?attr/selectableItemBackground">
+		
+		<ImageButton
+			android:id="@+id/imageViewRowMore"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:background="?attr/selectableItemBackground"
+			android:scaleType="centerInside"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:srcCompat="@drawable/ic_more_vert_black_24dp" />
+		
+		<androidx.cardview.widget.CardView
+			android:id="@+id/cardViewImageViewHolder"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="8dp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:cardCornerRadius="4dp">
+			
+			<ImageView
+				android:id="@+id/imageViewRowAvatar"
+				android:layout_width="92dp"
+				android:layout_height="92dp" />
+		
+		
+		</androidx.cardview.widget.CardView>
+		
+		<TextView
+			android:id="@+id/textViewRowHeader"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:fontFamily="sans-serif"
+			android:letterSpacing="0.01"
+			android:lineSpacingExtra="6sp"
+			android:textColor="@color/warm_grey_two"
+			android:textSize="14sp"
+			android:textStyle="normal"
+			app:layout_constrainedWidth="true"
+			app:layout_constraintEnd_toStartOf="@id/imageViewRowMore"
+			app:layout_constraintHorizontal_bias="0"
+			app:layout_constraintStart_toEndOf="@id/cardViewImageViewHolder"
+			app:layout_constraintTop_toTopOf="@id/cardViewImageViewHolder"
+			tools:text="Header" />
+		
+		<TextView
+			android:id="@+id/textViewRowText"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:layout_marginTop="8dp"
+			android:layout_marginBottom="8dp"
+			android:fontFamily="sans-serif-medium"
+			android:letterSpacing="0.01"
+			android:lineSpacingExtra="6sp"
+			android:textColor="@color/charcoal_grey"
+			android:textSize="14sp"
+			android:textStyle="normal"
+			app:layout_constrainedWidth="true"
+			app:layout_constraintEnd_toStartOf="@id/imageViewRowMore"
+			app:layout_constraintHorizontal_bias="0"
+			app:layout_constraintStart_toEndOf="@id/cardViewImageViewHolder"
+			app:layout_constraintTop_toBottomOf="@id/textViewRowHeader"
+			app:layout_goneMarginBottom="16dp"
+			tools:text="Description" />
+		
+		<TextView
+			android:id="@+id/textViewRowAddress"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:layout_marginTop="8dp"
+			android:fontFamily="sans-serif"
+			android:letterSpacing="0.02"
+			android:lineSpacingExtra="8sp"
+			android:textColor="@color/warm_grey_two"
+			android:textSize="12sp"
+			android:textStyle="normal"
+			app:layout_constrainedWidth="true"
+			app:layout_constraintEnd_toStartOf="@id/imageViewRowMore"
+			app:layout_constraintHorizontal_bias="0"
+			app:layout_constraintStart_toEndOf="@id/cardViewImageViewHolder"
+			app:layout_constraintTop_toBottomOf="@+id/textViewRowText"
+			app:layout_goneMarginBottom="16dp"
+			tools:text="Address" />
+	
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
