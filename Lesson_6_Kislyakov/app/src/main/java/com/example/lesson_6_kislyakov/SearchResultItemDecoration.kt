@@ -1,11 +1,10 @@
-package com.example.lesson_4_kislyakov
+package com.example.lesson_6_kislyakov
 
 import android.graphics.Rect
 import android.view.View
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class SearchResultItemDecoration(private val space: Int, private val NUMBER_OF_COLUMNS: Int) :
+class SearchResultItemDecoration(private val space: Int) :
     RecyclerView.ItemDecoration() {
 
     override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
@@ -18,32 +17,17 @@ class SearchResultItemDecoration(private val space: Int, private val NUMBER_OF_C
     private fun addSpaceToView(outRect: Rect?, position: Int?, parent: RecyclerView?) {
         if (position == null || parent == null)
             return
-
-        val grid = parent.layoutManager as GridLayoutManager
-        val spanSize = grid.spanSizeLookup.getSpanSize(position)
-
-        if (spanSize == NUMBER_OF_COLUMNS) {
-            if (position == 0) {
-                outRect?.top = space
-            }
+        if (position == 0) {
+            outRect?.top = space
+            outRect?.left = space
             outRect?.right = space
+            outRect?.bottom = space
         } else {
-            var allSpanSize = 0
-            for (i: Int in IntRange(0, position)) {
-                allSpanSize += grid.spanSizeLookup.getSpanSize(i)
-                if(position <= spanSize){
-                    outRect?.top = space
-                }
-            }
-            val currentModuloResult = allSpanSize % NUMBER_OF_COLUMNS
-            if (currentModuloResult == 0) {
+            outRect?.left = space
+            outRect?.right = space
+            outRect?.bottom = space
 
-                outRect?.right = space
-            }
+
         }
-        outRect?.left = space
-        outRect?.bottom = space
-
-
     }
 }

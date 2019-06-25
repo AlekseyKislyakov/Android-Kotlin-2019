@@ -2,16 +2,12 @@ package com.example.lesson_6_kislyakov
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.fragment_3.view.*
 
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
@@ -19,10 +15,34 @@ private const val ARG_PARAM2 = "param2"
  */
 class Fragment3 : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragment3, container, false)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_3, container, false)
+        // create on/off flag for the button (show/hide banner)
+        var bannerShown = false
+        view.buttonShowBanner.setOnClickListener {
+            val viewPagerFragment = FragmentViewPager()
+            //
+            if (!bannerShown) {
+                childFragmentManager.beginTransaction().replace(
+                    R.id.frameLayoutBannerContainer,
+                    viewPagerFragment
+                ).commit()
+                bannerShown = true
+                view.buttonShowBanner.text = "СВЕРНУТЬ БАННЕР"
+            } else {
+                childFragmentManager.beginTransaction()
+                    .remove(childFragmentManager.findFragmentById(R.id.frameLayoutBannerContainer)!!)
+                    .commit()
+                bannerShown = false
+                view.buttonShowBanner.text = "ПОКАЗАТЬ БАННЕР"
+
+
+            }
+        }
+        return view
     }
 
 

@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context=".Fragment2">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	style="@style/AppTheme"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context=".Fragment2">
+	
+	<com.google.android.material.appbar.AppBarLayout
+		android:id="@+id/appBarLayout"
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize">
+		
+		<androidx.appcompat.widget.Toolbar
+			android:id="@+id/toolbarFragment2"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			app:title="@string/fragment_toolbar3_title">
+		
+		</androidx.appcompat.widget.Toolbar>
+	
+	</com.google.android.material.appbar.AppBarLayout>
+	
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/recyclerViewTile"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:scrollbarStyle="outsideOverlay"
+		android:scrollbars="vertical">
+	
+	</androidx.recyclerview.widget.RecyclerView>
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
-
-</FrameLayout>
+</LinearLayout>

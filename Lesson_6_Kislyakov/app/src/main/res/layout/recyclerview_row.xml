@@ -5,99 +5,203 @@
 	android:id="@+id/cardViewBaseInfo"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	android:background="#ff0000">
+	android:background="#ff0000"
+	app:cardCornerRadius="4dp">
 	
 	<androidx.constraintlayout.widget.ConstraintLayout
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:background="?attr/selectableItemBackground">
 		
-		<ImageButton
-			android:id="@+id/imageViewRowMore"
-			android:layout_width="48dp"
-			android:layout_height="48dp"
-			android:background="?attr/selectableItemBackground"
+		<ImageView
+			android:id="@+id/imageViewRowAvatar"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="16dp"
 			android:scaleType="centerInside"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:srcCompat="@drawable/ic_water_cold" />
+		
+		<ImageButton
+			android:id="@+id/imageButtonRowInfo"
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:background="?attr/selectableItemBackground"
+			app:layout_constraintEnd_toStartOf="@id/imageButtonRowMore"
+			app:layout_constraintTop_toTopOf="parent"
+			app:srcCompat="@drawable/ic_info_black_24dp" />
+		
+		<ImageButton
+			android:id="@+id/imageButtonRowMore"
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:background="?attr/selectableItemBackground"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintTop_toTopOf="parent"
 			app:srcCompat="@drawable/ic_more_vert_black_24dp" />
-		
-		<androidx.cardview.widget.CardView
-			android:id="@+id/cardViewImageViewHolder"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_margin="8dp"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent"
-			app:cardCornerRadius="4dp">
-			
-			<ImageView
-				android:id="@+id/imageViewRowAvatar"
-				android:layout_width="92dp"
-				android:layout_height="92dp" />
-		
-		
-		</androidx.cardview.widget.CardView>
 		
 		<TextView
 			android:id="@+id/textViewRowHeader"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginStart="8dp"
-			android:fontFamily="sans-serif"
-			android:letterSpacing="0.01"
-			android:lineSpacingExtra="6sp"
-			android:textColor="@color/warm_grey_two"
-			android:textSize="14sp"
-			android:textStyle="normal"
-			app:layout_constrainedWidth="true"
-			app:layout_constraintEnd_toStartOf="@id/imageViewRowMore"
-			app:layout_constraintHorizontal_bias="0"
-			app:layout_constraintStart_toEndOf="@id/cardViewImageViewHolder"
-			app:layout_constraintTop_toTopOf="@id/cardViewImageViewHolder"
-			tools:text="Header" />
-		
-		<TextView
-			android:id="@+id/textViewRowText"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginStart="8dp"
-			android:layout_marginTop="8dp"
-			android:layout_marginBottom="8dp"
+			android:layout_margin="16dp"
 			android:fontFamily="sans-serif-medium"
-			android:letterSpacing="0.01"
-			android:lineSpacingExtra="6sp"
+			android:lineSpacingExtra="12sp"
 			android:textColor="@color/charcoal_grey"
+			android:textSize="16sp"
+			android:textStyle="normal"
+			app:layout_constrainedWidth="true"
+			app:layout_constraintEnd_toStartOf="@id/imageButtonRowInfo"
+			app:layout_constraintHorizontal_bias="0"
+			app:layout_constraintStart_toEndOf="@id/imageViewRowAvatar"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:text="Холодная вода" />
+		
+		<ImageView
+			android:id="@+id/imageViewRowSerial"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			android:layout_marginTop="8dp"
+			app:layout_constraintStart_toEndOf="@id/imageViewRowAvatar"
+			app:layout_constraintTop_toBottomOf="@id/textViewRowHeader"
+			app:srcCompat="@drawable/ic_serial_number" />
+		
+		<TextView
+			android:id="@+id/textViewRowSerial"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="4dp"
+			android:layout_marginTop="1dp"
+			android:fontFamily="sans-serif"
+			android:lineSpacingExtra="6sp"
+			android:textColor="#3f3f3f"
 			android:textSize="14sp"
 			android:textStyle="normal"
 			app:layout_constrainedWidth="true"
-			app:layout_constraintEnd_toStartOf="@id/imageViewRowMore"
-			app:layout_constraintHorizontal_bias="0"
-			app:layout_constraintStart_toEndOf="@id/cardViewImageViewHolder"
+			app:layout_constraintStart_toEndOf="@id/imageViewRowSerial"
 			app:layout_constraintTop_toBottomOf="@id/textViewRowHeader"
-			app:layout_goneMarginBottom="16dp"
-			tools:text="Description" />
+			tools:text="123456789" />
 		
 		<TextView
-			android:id="@+id/textViewRowAddress"
+			android:id="@+id/textViewRowInput1"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginStart="8dp"
-			android:layout_marginTop="8dp"
+			android:layout_marginStart="4dp"
+			android:layout_marginTop="20dp"
 			android:fontFamily="sans-serif"
 			android:letterSpacing="0.02"
-			android:lineSpacingExtra="8sp"
+			android:lineSpacingExtra="4sp"
 			android:textColor="@color/warm_grey_two"
 			android:textSize="12sp"
 			android:textStyle="normal"
 			app:layout_constrainedWidth="true"
-			app:layout_constraintEnd_toStartOf="@id/imageViewRowMore"
+			app:layout_constraintStart_toStartOf="@+id/editTextRowInput1"
+			app:layout_constraintTop_toBottomOf="@+id/textViewRowSerial"
+			tools:text="День" />
+		
+		<TextView
+			android:id="@+id/textViewRowInput2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="4dp"
+			android:fontFamily="sans-serif"
+			android:letterSpacing="0.02"
+			android:lineSpacingExtra="4sp"
+			android:textColor="@color/warm_grey_two"
+			android:textSize="12sp"
+			android:textStyle="normal"
+			app:layout_constrainedWidth="true"
+			app:layout_constraintStart_toStartOf="@+id/editTextRowInput2"
+			app:layout_constraintTop_toTopOf="@+id/textViewRowInput1"
+			tools:text="День" />
+		
+		<TextView
+			android:id="@+id/textViewRowInput3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="4dp"
+			android:layout_marginEnd="8dp"
+			android:fontFamily="sans-serif"
+			android:letterSpacing="0.02"
+			android:lineSpacingExtra="4sp"
+			android:textColor="@color/warm_grey_two"
+			android:textSize="12sp"
+			android:textStyle="normal"
+			app:layout_constrainedWidth="true"
+			app:layout_constraintStart_toStartOf="@+id/editTextRowInput3"
+			app:layout_constraintTop_toTopOf="@+id/textViewRowInput1"
+			tools:text="День" />
+		
+		<EditText
+			android:id="@+id/editTextRowInput1"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			android:layout_marginEnd="8dp"
+			android:hint="@string/hint_message"
+			android:inputType="number"
+			app:layout_constraintEnd_toStartOf="@+id/editTextRowInput2"
+			app:layout_constraintHorizontal_chainStyle="spread"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/textViewRowInput1" />
+		
+		<EditText
+			android:id="@+id/editTextRowInput2"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="8dp"
+			android:hint="@string/hint_message"
+			android:inputType="number"
+			app:layout_constraintEnd_toStartOf="@+id/editTextRowInput3"
+			app:layout_constraintStart_toEndOf="@+id/editTextRowInput1"
+			app:layout_constraintTop_toBottomOf="@id/textViewRowInput1" />
+		
+		<EditText
+			android:id="@+id/editTextRowInput3"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="8dp"
+			android:hint="@string/hint_message"
+			android:inputType="number"
+			app:layout_constraintEnd_toStartOf="@+id/imageButtonRowSend"
+			app:layout_constraintStart_toEndOf="@+id/editTextRowInput2"
+			app:layout_constraintTop_toBottomOf="@id/textViewRowInput1"
+			app:layout_goneMarginEnd="16dp" />
+		
+		<ImageButton
+			android:id="@+id/imageButtonRowSend"
+			android:layout_width="32dp"
+			android:layout_height="32dp"
+			android:layout_marginEnd="16dp"
+			android:background="@drawable/button_clickable"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/textViewRowInput1"
+			app:srcCompat="@drawable/ic_send" />
+		
+		<TextView
+			android:id="@+id/textViewRowDescription"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			android:layout_marginTop="4dp"
+			android:layout_marginEnd="16dp"
+			android:layout_marginBottom="16dp"
+			android:drawablePadding="7dp"
+			android:fontFamily="sans-serif"
+			android:lineSpacingExtra="6sp"
+			android:textColor="@color/charcoal_grey"
+			android:textSize="12sp"
+			android:textStyle="normal"
+			app:drawableStartCompat="@drawable/ic_alert"
+			app:layout_constrainedWidth="true"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintHorizontal_bias="0"
-			app:layout_constraintStart_toEndOf="@id/cardViewImageViewHolder"
-			app:layout_constraintTop_toBottomOf="@+id/textViewRowText"
-			app:layout_goneMarginBottom="16dp"
-			tools:text="Address" />
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/editTextRowInput1"
+			tools:text="dnvlkfnvlkfnvlknfvlknfvlk" />
 	
 	</androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

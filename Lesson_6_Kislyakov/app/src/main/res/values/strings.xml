@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Lesson_6_Kislyakov</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_toolbar3_title">Fragment 2</string>
+    <string name="menu_toolbar_item1_search">Search</string>
+    <string name="menu_toolbar_subitem1">Subitem 1</string>
+    <string name="menu_toolbar_subitem2">Subitem 2</string>
+    <string name="menu_toolbar_subitem3">Subitem 3</string>
+    <string name="hint_message">35</string>
+	<string name="toolbar_fragment3_title">Fragment 3</string>
+    <string name="toolbar_fragment1_title">Fragment 1</string>
+    <string name="button_fragment3_title">ПОКАЗАТЬ БАННЕР</string>
+</resources>

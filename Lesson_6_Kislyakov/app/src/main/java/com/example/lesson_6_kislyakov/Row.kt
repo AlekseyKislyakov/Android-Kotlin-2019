@@ -1,3 +1,6 @@
-package com.example.lesson_5_kislyakov.models
+package com.example.lesson_6_kislyakov
 
-class Row(val header: String, val description: String, val address: String, var avatar: String)
+import android.text.Spannable
+
+class Row(val header: String, val serial: String, val data: ArrayList<String>,
+          var description: Spannable, var avatar: Int)

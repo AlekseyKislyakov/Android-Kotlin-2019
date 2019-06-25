@@ -2,16 +2,13 @@ package com.example.lesson_6_kislyakov
 
 
 import android.os.Bundle
+import android.view.*
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_1.*
 
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
@@ -19,11 +16,27 @@ private const val ARG_PARAM2 = "param2"
  */
 class Fragment1 : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_1, container, false)
+        val toolbar = view.findViewById<Toolbar>(R.id.toolbarFragment1)
+        toolbar.inflateMenu(R.menu.menu_toolbar_item1)
+
+        toolbar.setOnMenuItemClickListener {
+            when {
+                it.itemId == R.id.itemSearch -> Toast.makeText(activity, "Search", Toast.LENGTH_SHORT).show()
+                it.itemId == R.id.itemSubitem1 -> Toast.makeText(activity, "Subitem 1", Toast.LENGTH_SHORT).show()
+                it.itemId == R.id.itemSubitem2 -> Toast.makeText(activity, "Subitem 2", Toast.LENGTH_SHORT).show()
+                it.itemId == R.id.itemSubitem3 -> Toast.makeText(activity, "Subitem 3", Toast.LENGTH_SHORT).show()
+            }
+            true
+        }
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_1, container, false)
+        return view
     }
+
 
 
 }

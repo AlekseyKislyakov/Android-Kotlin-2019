@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context=".Fragment3">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context=".Fragment3">
+	
+	<com.google.android.material.appbar.AppBarLayout
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize">
+		
+		<androidx.appcompat.widget.Toolbar
+			android:id="@+id/toolbarFragment3"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:title="@string/toolbar_fragment3_title" />
+	</com.google.android.material.appbar.AppBarLayout>
+	
+	<Button
+		android:id="@+id/buttonShowBanner"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:layout_marginTop="70dp"
+		android:text="@string/button_fragment3_title" />
+	
+	<FrameLayout
+		android:id="@+id/frameLayoutBannerContainer"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="40dp" />
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
-
-</FrameLayout>
+</LinearLayout>
