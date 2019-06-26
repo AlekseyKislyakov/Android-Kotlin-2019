@@ -107,7 +107,7 @@ class FragmentViewPager : Fragment() {
         fragmentList.add(
             FragmentBasic.newInstance(
                 "Картинка 1",
-                "https://www.android-examples.com/wp-content/uploads/2015/12/androidmanifest.png"
+                "https://cs9.pikabu.ru/post_img/2019/06/26/4/1561526076133262220.jpg"
             )
         )
         fragmentList.add(
