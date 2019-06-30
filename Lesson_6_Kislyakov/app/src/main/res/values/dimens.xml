@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<dimen name="photos_list_spacing">8dp</dimen>
+	<dimen name="dots_indicator_padding">4dp</dimen>
+	<dimen name="decorator_padding">8dp</dimen>
+	<dimen name="alert_padding">7dp</dimen>
 </resources>

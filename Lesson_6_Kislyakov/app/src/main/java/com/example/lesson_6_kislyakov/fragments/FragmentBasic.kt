@@ -1,4 +1,4 @@
-package com.example.lesson_6_kislyakov
+package com.example.lesson_6_kislyakov.fragments
 
 
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
+import com.example.lesson_6_kislyakov.R
 import kotlinx.android.synthetic.main.fragment_basic.view.*
 
 private const val EXTRA_MESSAGE = "param1"

@@ -85,7 +85,7 @@
 			tools:text="123456789" />
 		
 		<TextView
-			android:id="@+id/textViewRowInput1"
+			android:id="@+id/textViewRowInputFirst"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="4dp"
@@ -97,12 +97,12 @@
 			android:textSize="12sp"
 			android:textStyle="normal"
 			app:layout_constrainedWidth="true"
-			app:layout_constraintStart_toStartOf="@+id/editTextRowInput1"
+			app:layout_constraintStart_toStartOf="@+id/editTextRowInputFirst"
 			app:layout_constraintTop_toBottomOf="@+id/textViewRowSerial"
 			tools:text="День" />
 		
 		<TextView
-			android:id="@+id/textViewRowInput2"
+			android:id="@+id/textViewRowInputSecond"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="4dp"
@@ -113,12 +113,12 @@
 			android:textSize="12sp"
 			android:textStyle="normal"
 			app:layout_constrainedWidth="true"
-			app:layout_constraintStart_toStartOf="@+id/editTextRowInput2"
-			app:layout_constraintTop_toTopOf="@+id/textViewRowInput1"
+			app:layout_constraintStart_toStartOf="@+id/editTextRowInputSecond"
+			app:layout_constraintTop_toTopOf="@+id/textViewRowInputFirst"
 			tools:text="День" />
 		
 		<TextView
-			android:id="@+id/textViewRowInput3"
+			android:id="@+id/textViewRowInputThird"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="4dp"
@@ -130,44 +130,44 @@
 			android:textSize="12sp"
 			android:textStyle="normal"
 			app:layout_constrainedWidth="true"
-			app:layout_constraintStart_toStartOf="@+id/editTextRowInput3"
-			app:layout_constraintTop_toTopOf="@+id/textViewRowInput1"
+			app:layout_constraintStart_toStartOf="@+id/editTextRowInputThird"
+			app:layout_constraintTop_toTopOf="@+id/textViewRowInputFirst"
 			tools:text="День" />
 		
 		<EditText
-			android:id="@+id/editTextRowInput1"
+			android:id="@+id/editTextRowInputFirst"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="16dp"
 			android:layout_marginEnd="8dp"
 			android:hint="@string/hint_message"
 			android:inputType="number"
-			app:layout_constraintEnd_toStartOf="@+id/editTextRowInput2"
+			app:layout_constraintEnd_toStartOf="@+id/editTextRowInputSecond"
 			app:layout_constraintHorizontal_chainStyle="spread"
 			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@id/textViewRowInput1" />
+			app:layout_constraintTop_toBottomOf="@id/textViewRowInputFirst" />
 		
 		<EditText
-			android:id="@+id/editTextRowInput2"
+			android:id="@+id/editTextRowInputSecond"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_marginEnd="8dp"
 			android:hint="@string/hint_message"
 			android:inputType="number"
-			app:layout_constraintEnd_toStartOf="@+id/editTextRowInput3"
-			app:layout_constraintStart_toEndOf="@+id/editTextRowInput1"
-			app:layout_constraintTop_toBottomOf="@id/textViewRowInput1" />
+			app:layout_constraintEnd_toStartOf="@+id/editTextRowInputThird"
+			app:layout_constraintStart_toEndOf="@+id/editTextRowInputFirst"
+			app:layout_constraintTop_toBottomOf="@id/textViewRowInputFirst" />
 		
 		<EditText
-			android:id="@+id/editTextRowInput3"
+			android:id="@+id/editTextRowInputThird"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_marginEnd="8dp"
 			android:hint="@string/hint_message"
 			android:inputType="number"
 			app:layout_constraintEnd_toStartOf="@+id/imageButtonRowSend"
-			app:layout_constraintStart_toEndOf="@+id/editTextRowInput2"
-			app:layout_constraintTop_toBottomOf="@id/textViewRowInput1"
+			app:layout_constraintStart_toEndOf="@+id/editTextRowInputSecond"
+			app:layout_constraintTop_toBottomOf="@id/textViewRowInputFirst"
 			app:layout_goneMarginEnd="16dp" />
 		
 		<ImageButton
@@ -177,7 +177,7 @@
 			android:layout_marginEnd="16dp"
 			android:background="@drawable/button_clickable"
 			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintTop_toBottomOf="@+id/textViewRowInput1"
+			app:layout_constraintTop_toBottomOf="@+id/textViewRowInputFirst"
 			app:srcCompat="@drawable/ic_send" />
 		
 		<TextView
@@ -188,19 +188,17 @@
 			android:layout_marginTop="4dp"
 			android:layout_marginEnd="16dp"
 			android:layout_marginBottom="16dp"
-			android:drawablePadding="7dp"
 			android:fontFamily="sans-serif"
 			android:lineSpacingExtra="6sp"
 			android:textColor="@color/charcoal_grey"
 			android:textSize="12sp"
 			android:textStyle="normal"
-			app:drawableStartCompat="@drawable/ic_alert"
 			app:layout_constrainedWidth="true"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintHorizontal_bias="0"
 			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@id/editTextRowInput1"
+			app:layout_constraintTop_toBottomOf="@id/editTextRowInputFirst"
 			tools:text="dnvlkfnvlkfnvlknfvlknfvlk" />
 	
 	</androidx.constraintlayout.widget.ConstraintLayout>

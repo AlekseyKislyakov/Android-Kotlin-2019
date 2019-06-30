@@ -1,4 +1,4 @@
-package com.example.lesson_6_kislyakov
+package com.example.lesson_6_kislyakov.utils
 
 import android.graphics.Rect
 import android.view.View
@@ -26,8 +26,6 @@ class SearchResultItemDecoration(private val space: Int) :
             outRect?.left = space
             outRect?.right = space
             outRect?.bottom = space
-
-
         }
     }
 }
