@@ -14,6 +14,9 @@ import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    val STATE_LOADING = 0
+    val STATE_DATA = 1
+    val STATE_ERROR = 2
 
     var disposable: Disposable? = null
     val bridgeListAdapter = BridgeListAdapter()
@@ -21,13 +24,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        buttonRetry.setOnClickListener {
+            getBridges()
+        }
+        getBridges()
+    }
 
+    fun getBridges(){
+        viewFlipper.displayedChild = STATE_LOADING
         disposable = BridgeApiService.create()
             .search()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .subscribe({
-                result ->
+                    result ->
                 bridgeListAdapter.setItems(result.objects)
                 bridgeListAdapter.onItemClick = { item ->
 
@@ -63,7 +73,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 recyclerViewMain.layoutManager = LinearLayoutManager(this)
                 recyclerViewMain.adapter = bridgeListAdapter
+                viewFlipper.displayedChild = STATE_DATA
             }, { error ->
+                viewFlipper.displayedChild = STATE_ERROR
                 error.printStackTrace()
             })
     }
