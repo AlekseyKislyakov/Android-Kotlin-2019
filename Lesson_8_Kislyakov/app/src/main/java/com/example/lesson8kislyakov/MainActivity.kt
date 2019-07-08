@@ -26,6 +26,11 @@ const val DATABASE_NAME = "database"
 const val STATUS_SHOWN = 0
 const val STATUS_HIDDEN = 1
 
+const val STATE_LOADING = 0
+const val STATE_DATA = 1
+const val STATE_ERROR = 2
+
+
 class MainActivity : AppCompatActivity() {
     var noteDatabase: NoteDatabase? = null
     private var disposable: Disposable? = null
@@ -83,6 +88,11 @@ class MainActivity : AppCompatActivity() {
             it.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
+                    if(it.isEmpty()){
+                        viewFlipperMain.displayedChild = STATE_ERROR
+                    }else{
+                        viewFlipperMain.displayedChild = STATE_DATA
+                    }
                     noteListAdapter.setItems(it)
                 }
         }
@@ -91,6 +101,11 @@ class MainActivity : AppCompatActivity() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe { it ->
+                if(it.isEmpty()){
+                    viewFlipperMain.displayedChild = STATE_ERROR
+                }else{
+                    viewFlipperMain.displayedChild = STATE_DATA
+                }
                 noteListAdapter.setItems(it)
                 noteListAdapter.onItemClick = {
                     startActivityForResult(
