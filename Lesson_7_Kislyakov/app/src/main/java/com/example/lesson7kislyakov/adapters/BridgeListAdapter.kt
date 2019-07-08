@@ -13,7 +13,7 @@ class BridgeListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     var onItemClick: ((Bridge) -> Unit)? = null
 
-    private var bridgeList: List<Bridge>? = null
+    private var bridgeList: List<Bridge>? = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -23,10 +23,11 @@ class BridgeListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     fun setItems(elements: List<Bridge>){
         bridgeList = elements
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {
-        if(bridgeList != null){
+        if(bridgeList!!.isEmpty()){
             return bridgeList!!.size
         } else throw Exception("Must use setItems()!")
     }

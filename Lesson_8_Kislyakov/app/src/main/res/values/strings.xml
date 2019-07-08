@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Lesson_8_Kislyakov</string>
+    <string name="toolbar_main_title">Заметки</string>
+    <string name="empty_note_list">Заметок пока нет</string>
+    <string name="main_menu_search">search</string>
+    <string name="add_note_hint_header">Название</string>
+    <string name="add_note_hint_text">Описание</string>
+    <string name="note_text_missing">Нет текста заметки</string>
+    <string name="write_note_text">Введите текст заметки!</string>
+    <string name="accept_string">ОК</string>
+	<string name="color_white_string">#ffffff</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<dimen name="padding_color_picker_out">30dp</dimen>
+	<dimen name="padding_color_picker">4dp</dimen>
+	<dimen name="padding_note_list">8dp</dimen>
+	<dimen name="color_picker_item_size">48dp</dimen>
+	<dimen name="fab_margin">16dp</dimen>
+	<dimen name="note_margin_start">16dp</dimen>
+	<dimen name="note_margin_top">16dp</dimen>
+	<dimen name="note_margin_end">16dp</dimen>
+	<dimen name="note_margin_bottom">16dp</dimen>
+	<dimen name="note_gone_margin">16dp</dimen>
+</resources>

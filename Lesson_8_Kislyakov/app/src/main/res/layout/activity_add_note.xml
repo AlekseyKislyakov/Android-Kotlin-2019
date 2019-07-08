@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context=".AddNoteActivity">
+	
+	<com.google.android.material.appbar.AppBarLayout
+		android:id="@+id/appBarLayoutAddNote"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		
+		<androidx.appcompat.widget.Toolbar
+			android:id="@+id/toolbarAddNote"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			app:navigationIcon="@drawable/ic_arrow_back_black_24dp" />
+	
+	</com.google.android.material.appbar.AppBarLayout>
+	
+	<EditText
+		android:id="@+id/editTextAddNoteHeader"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="@string/add_note_hint_header"
+		android:inputType="textMultiLine"/>
+	
+	<EditText
+		android:id="@+id/editTextAddNoteText"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="@string/add_note_hint_text"
+		android:inputType="textMultiLine" />
+	
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/colorPickerRecyclerView1"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+	
+	</androidx.recyclerview.widget.RecyclerView>
+	
+</LinearLayout>

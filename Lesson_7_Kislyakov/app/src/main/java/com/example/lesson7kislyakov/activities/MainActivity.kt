@@ -1,25 +1,23 @@
 package com.example.lesson7kislyakov.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.lesson7kislyakov.*
+import com.example.lesson7kislyakov.R
 import com.example.lesson7kislyakov.adapters.BridgeListAdapter
-import com.example.lesson7kislyakov.models.BridgeDetailInfo
 import com.example.lesson7kislyakov.network.BridgeApiService
-import com.example.lesson7kislyakov.utils.DivorceUtil
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    val STATE_LOADING = 0
-    val STATE_DATA = 1
-    val STATE_ERROR = 2
+    private val STATE_LOADING = 0
+    private val STATE_DATA = 1
+    private val STATE_ERROR = 2
 
-    var disposable: Disposable? = null
-    val bridgeListAdapter = BridgeListAdapter()
+    private var disposable: Disposable? = null
+    private val bridgeListAdapter = BridgeListAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,47 +28,23 @@ class MainActivity : AppCompatActivity() {
         getBridges()
     }
 
-    fun getBridges(){
+    private fun getBridges() {
         viewFlipper.displayedChild = STATE_LOADING
-        disposable = BridgeApiService.create()
-            .search()
+        disposable = BridgeApiService.getRetrofit()
+            .getSingleBridgeResponse()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
-            .subscribe({
-                    result ->
+            .subscribe({ result ->
                 bridgeListAdapter.setItems(result.objects)
                 bridgeListAdapter.onItemClick = { item ->
-
-                    val divorceUtil = DivorceUtil()
-                    val stateBridge = divorceUtil.divorceState(item.divorces)
-                    val bridgeInfoObject: BridgeDetailInfo
-
-                    // check if bridge opened or closed then send photo's uri
-                    bridgeInfoObject = if(stateBridge == divorceUtil.STATE_CLOSED){
-                        BridgeDetailInfo(
-                            item.name,
-                            divorceUtil.divorceListToString(item.divorces),
-                            item.description,
-                            item.photo_close,
-                            stateBridge
-                        )
-                    } else {
-                        BridgeDetailInfo(
-                            item.name,
-                            divorceUtil.divorceListToString(item.divorces),
-                            item.description,
-                            item.photo_open,
-                            stateBridge
-                        )
-                    }
-
                     startActivity(
                         DetailBridgeActivity.newIntent(
                             this,
-                            bridgeInfoObject
+                            item
                         )
                     )
                 }
+
                 recyclerViewMain.layoutManager = LinearLayoutManager(this)
                 recyclerViewMain.adapter = bridgeListAdapter
                 viewFlipper.displayedChild = STATE_DATA
@@ -82,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        if(disposable!!.isDisposed){
+        if (disposable!!.isDisposed) {
             disposable!!.dispose()
         }
 

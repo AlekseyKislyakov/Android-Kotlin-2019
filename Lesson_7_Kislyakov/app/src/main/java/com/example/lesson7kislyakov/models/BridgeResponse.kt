@@ -1,11 +1,14 @@
 package com.example.lesson7kislyakov.models
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 import java.util.*
 
 data class BridgeResponse(
     val objects: List<Bridge>
 )
 
+@Parcelize
 data class Bridge(
     val description: String,
     val description_eng: String,
@@ -18,10 +21,11 @@ data class Bridge(
     val photo_close: String,
     val photo_open: String,
     val resource_uri: String
-)
+) :Parcelable
 
+@Parcelize
 data class Divorce(
     val end: Date,
     val id: Int,
     val start: Date
-)
+) :Parcelable

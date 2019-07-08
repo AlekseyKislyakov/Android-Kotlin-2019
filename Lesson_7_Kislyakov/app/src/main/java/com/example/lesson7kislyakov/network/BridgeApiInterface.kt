@@ -11,11 +11,11 @@ import retrofit2.http.GET
 interface BridgeApiService {
 
     @GET("api/v1/bridges/?format=json")
-    fun search(): Single<BridgeResponse>
+    fun getSingleBridgeResponse(): Single<BridgeResponse>
 
     companion object Factory {
         val BASE_URL = "http://gdemost.handh.ru/"
-        fun create(): BridgeApiService {
+        fun getRetrofit(): BridgeApiService {
 
             val TIME_FORMAT = "HH:mm:ss"
 

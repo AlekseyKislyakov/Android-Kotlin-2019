@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="colorPickerColors">
+		<item name="lipstick">#e51c23</item>
+		<item name="lipstick_two">#e91e63</item>
+		<item name="coral">#ff4242</item>
+		<item name="greenish_blue">#0c957f</item>
+		<item name="weird_green">#3de095</item>
+		<item name="mango">#f99d26</item>
+		<item name="turquoise_blue">#00bcd4</item>
+		<item name="barney">#9c27b0</item>
+		<item name="bluey_purple">#673ab7</item>
+		<item name="lightish_blue">#5677fc</item>
+		<item name="azure">#02a9f4</item>
+		<item name="teal">#009788</item>
+		<item name="booger">#8cc34a</item>
+		<item name="sickly_yellow">#cddc38</item>
+		<item name="marigold">#fec10a</item>
+		<item name="sunflower">#ffcd10</item>
+	</string-array>
+</resources>
