@@ -1,4 +1,4 @@
-package com.example.lesson8kislyakov
+package com.example.lesson8kislyakov.db
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo

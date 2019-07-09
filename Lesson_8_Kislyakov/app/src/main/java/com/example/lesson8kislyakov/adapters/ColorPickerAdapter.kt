@@ -1,13 +1,12 @@
-package com.example.lesson8kislyakov
+package com.example.lesson8kislyakov.adapters
 
 import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.GradientDrawable
-import android.graphics.drawable.ShapeDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.lesson8kislyakov.R
 import kotlinx.android.synthetic.main.color_picker_element_layout.view.*
 
 const val STATE_UNDERFINED = -2

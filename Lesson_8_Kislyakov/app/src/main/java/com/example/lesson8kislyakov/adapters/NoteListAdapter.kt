@@ -1,4 +1,4 @@
-package com.example.lesson8kislyakov
+package com.example.lesson8kislyakov.adapters
 
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.lesson8kislyakov.db.Note
+import com.example.lesson8kislyakov.R
 import kotlinx.android.synthetic.main.note_layout.view.*
 
 class NoteListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

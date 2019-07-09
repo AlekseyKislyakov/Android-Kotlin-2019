@@ -1,4 +1,4 @@
-package com.example.lesson8kislyakov
+package com.example.lesson8kislyakov.decorators
 
 import android.graphics.Rect
 import android.util.Log

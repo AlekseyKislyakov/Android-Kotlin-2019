@@ -1,4 +1,4 @@
-package com.example.lesson8kislyakov
+package com.example.lesson8kislyakov.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

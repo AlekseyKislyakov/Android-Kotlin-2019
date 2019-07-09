@@ -1,4 +1,4 @@
-package com.example.lesson8kislyakov
+package com.example.lesson8kislyakov.activities
 
 import android.app.Activity
 import android.content.Intent
@@ -9,6 +9,11 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import androidx.room.Room
+import com.example.lesson8kislyakov.*
+import com.example.lesson8kislyakov.adapters.NoteListAdapter
+import com.example.lesson8kislyakov.db.Note
+import com.example.lesson8kislyakov.db.NoteDatabase
+import com.example.lesson8kislyakov.decorators.StaggeredItemDecoration
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
 import io.reactivex.FlowableOnSubscribe
@@ -44,11 +49,16 @@ class MainActivity : AppCompatActivity() {
         recyclerViewMain.adapter = noteListAdapter
         recyclerViewMain.layoutManager =
             StaggeredGridLayoutManager(NOTE_COLUMN_COUNT, StaggeredGridLayoutManager.VERTICAL)
-        recyclerViewMain.addItemDecoration(StaggeredItemDecoration(resources.getDimension(R.dimen.padding_note_list).toInt()))
+        recyclerViewMain.addItemDecoration(
+            StaggeredItemDecoration(
+                resources.getDimension(R.dimen.padding_note_list).toInt()
+            )
+        )
 
         noteDatabase = Room.databaseBuilder(
             applicationContext,
-            NoteDatabase::class.java, DATABASE_NAME
+            NoteDatabase::class.java,
+            DATABASE_NAME
         )
             .build()
 
@@ -62,9 +72,11 @@ class MainActivity : AppCompatActivity() {
                 SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {
                     val result = "%$query%"
+                    viewFlipperMain.displayedChild =
+                        STATE_LOADING
                     subscriber.onNext(
                         noteDatabase!!.noteDao().searchFlowableQuery(
-                            result!!,
+                            result,
                             STATUS_SHOWN
                         )
                     )
@@ -76,7 +88,7 @@ class MainActivity : AppCompatActivity() {
                     val result = "%$newText%"
                     subscriber.onNext(
                         noteDatabase!!.noteDao().searchFlowableQuery(
-                            result!!,
+                            result,
                             STATUS_SHOWN
                         )
                     )
@@ -89,9 +101,11 @@ class MainActivity : AppCompatActivity() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
                     if(it.isEmpty()){
-                        viewFlipperMain.displayedChild = STATE_ERROR
+                        viewFlipperMain.displayedChild =
+                            STATE_ERROR
                     }else{
-                        viewFlipperMain.displayedChild = STATE_DATA
+                        viewFlipperMain.displayedChild =
+                            STATE_DATA
                     }
                     noteListAdapter.setItems(it)
                 }
@@ -102,14 +116,19 @@ class MainActivity : AppCompatActivity() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe { it ->
                 if(it.isEmpty()){
-                    viewFlipperMain.displayedChild = STATE_ERROR
+                    viewFlipperMain.displayedChild =
+                        STATE_ERROR
                 }else{
-                    viewFlipperMain.displayedChild = STATE_DATA
+                    viewFlipperMain.displayedChild =
+                        STATE_DATA
                 }
                 noteListAdapter.setItems(it)
                 noteListAdapter.onItemClick = {
                     startActivityForResult(
-                        AddNoteActivity.newIntent(this, it),
+                        AddNoteActivity.newIntent(
+                            this,
+                            it
+                        ),
                         ACTIVITY_TILE_REQUEST_CODE
                     )
                 }
@@ -140,7 +159,10 @@ class MainActivity : AppCompatActivity() {
             }
         floatingActionButtonMain.setOnClickListener {
             startActivityForResult(
-                AddNoteActivity.newIntent(this, null),
+                AddNoteActivity.newIntent(
+                    this,
+                    null
+                ),
                 ACTIVITY_TILE_REQUEST_CODE
             )
         }

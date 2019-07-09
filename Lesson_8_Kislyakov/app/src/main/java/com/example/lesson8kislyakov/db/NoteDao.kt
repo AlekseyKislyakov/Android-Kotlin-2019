@@ -1,10 +1,7 @@
-package com.example.lesson8kislyakov
+package com.example.lesson8kislyakov.db
 
 import androidx.room.*
-import com.example.lesson8kislyakov.Note
 import io.reactivex.Flowable
-import io.reactivex.Maybe
-import io.reactivex.Single
 
 @Dao
 interface NoteDao {

@@ -1,13 +1,16 @@
-package com.example.lesson8kislyakov
+package com.example.lesson8kislyakov.activities
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.lesson8kislyakov.adapters.ColorPickerAdapter
+import com.example.lesson8kislyakov.decorators.GridItemDecoration
+import com.example.lesson8kislyakov.db.Note
+import com.example.lesson8kislyakov.R
 import kotlinx.android.synthetic.main.activity_add_note.*
 import kotlinx.android.synthetic.main.color_picker_recycler_view.view.*
 
@@ -58,12 +61,15 @@ class AddNoteActivity : AppCompatActivity() {
                 val mRecyclerView =
                     layoutInflater.inflate(R.layout.color_picker_recycler_view, null)
                 mRecyclerView.colorPickerRecyclerView.layoutManager =
-                    GridLayoutManager(this, COLOR_PICKER_COLUMN_COUNT)
+                    GridLayoutManager(this,
+                        COLOR_PICKER_COLUMN_COUNT
+                    )
                 mRecyclerView.colorPickerRecyclerView.addItemDecoration(
                     GridItemDecoration(
                         (resources.getDimension(
                             R.dimen.padding_color_picker
-                        ).toInt()), COLOR_PICKER_COLUMN_COUNT
+                        ).toInt()),
+                        COLOR_PICKER_COLUMN_COUNT
                     )
                 )
                 val adapter = ColorPickerAdapter()
