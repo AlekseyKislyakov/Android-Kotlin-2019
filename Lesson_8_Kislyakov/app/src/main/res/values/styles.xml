@@ -19,7 +19,7 @@
     <style name="HeaderTextStyle">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/colorBlack87</item>
-        <item name="android:textStyle">normal</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:lineSpacingExtra">8sp</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:layout_marginStart">16dp</item>
@@ -38,5 +38,22 @@
         <item name="android:textColorPrimary">@color/colorWhite</item>
     </style>
 
+    <style name="AddNoteTheme" parent="AppTheme">
+        <item name="android:windowBackground">@color/colorWhite</item>
+        <item name="android:colorBackground">@color/colorWhite</item>
+    </style>
+    
+    <style name="AddNoteHeaderTextStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/colorWarmGrey4</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    
+    <style name="AddNoteDescriptionTextStyle" parent="AddNoteHeaderTextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
 
 </resources>

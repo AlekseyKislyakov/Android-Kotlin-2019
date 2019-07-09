@@ -1,7 +1,6 @@
 package com.example.lesson8kislyakov.decorators
 
 import android.graphics.Rect
-import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -19,7 +18,7 @@ class StaggeredItemDecoration(private val space: Int) :
 
         val lp = view.layoutParams as StaggeredGridLayoutManager.LayoutParams
 
-        addSpaceToView(outRect, parent.getChildAdapterPosition(view),lp.spanIndex, parent)
+        addSpaceToView(outRect, parent.getChildAdapterPosition(view), lp.spanIndex, parent)
     }
 
     private fun addSpaceToView(outRect: Rect?, position: Int?, state: Int?, parent: RecyclerView?) {
@@ -27,13 +26,16 @@ class StaggeredItemDecoration(private val space: Int) :
             return
         val grid = parent.layoutManager as StaggeredGridLayoutManager
 
+        // add spaces to top holders
         if (position < grid.spanCount) {
             outRect?.top = space
         }
-        if(state == 1){
+        // add spaces to right holders
+        if (state == grid.spanCount - 1) {
             outRect?.right = space
         }
 
+        // add left&bottom spaces to all holders
         outRect?.left = space
         outRect?.bottom = space
 

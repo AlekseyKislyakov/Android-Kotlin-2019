@@ -23,7 +23,7 @@ class ColorPickerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     var checkPosition = STATE_UNDERFINED
     var deleteCheckPosition = STATE_NULL
 
-    private var colorList: List<String>? = ArrayList()
+    private var colorList: List<String> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -34,19 +34,17 @@ class ColorPickerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     fun setItems(elements: List<String>, defaultColor: String) {
         colorList = elements
         // search if color already exists in palette, then put check on it
-        checkPosition = colorList!!.indexOf(defaultColor)
+        checkPosition = colorList.indexOf(defaultColor)
         notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {
-        if (colorList != null) {
-            return colorList!!.size
-        } else throw Exception("Must use setItems()!")
+        return colorList.size
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val viewHolder = holder as ColorListViewHolder
-        viewHolder.bind(colorList!![position])
+        viewHolder.bind(colorList[position])
 
     }
 

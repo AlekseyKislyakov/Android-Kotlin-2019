@@ -9,4 +9,8 @@
     <string name="write_note_text">Введите текст заметки!</string>
     <string name="accept_string">ОК</string>
 	<string name="color_white_string">#ffffff</string>
+    <string name="choose_color">Choose color</string>
+    <string name="long_click_dialog_header">Что делать с заметкой</string>
+    <string name="long_click_dialog_archive">Архивировать</string>
+    <string name="long_click_dialog_delete">Удалить</string>
 </resources>

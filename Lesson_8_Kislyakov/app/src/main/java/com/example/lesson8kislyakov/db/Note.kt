@@ -6,6 +6,8 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 
+const val WHITE_COLOR = "#ffffff"
+
 @Parcelize
 @Entity(tableName = "notes_table")
 data class Note(
@@ -19,13 +21,13 @@ data class Note(
     var noteId: Int = 0,
 
     @ColumnInfo(name = "note_color")
-    var noteColor: String? = "#ffffff",
+    var noteColor: String? = WHITE_COLOR,
 
     @ColumnInfo(name = "note_hidden")
     var hidden: Int = 0
 ) : Parcelable {
     fun isEmpty():Boolean{
-        return (this.noteHeader == "" && this.noteColor == "#ffffff" && this.noteText == "")
+        return (this.noteHeader == "" && this.noteColor == WHITE_COLOR && this.noteText == "")
     }
 }
 

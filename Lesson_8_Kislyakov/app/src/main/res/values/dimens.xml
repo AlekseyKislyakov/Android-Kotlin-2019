@@ -10,4 +10,8 @@
 	<dimen name="note_margin_end">16dp</dimen>
 	<dimen name="note_margin_bottom">16dp</dimen>
 	<dimen name="note_gone_margin">16dp</dimen>
+	<dimen name="add_note_start_margin">16dp</dimen>
+	<dimen name="add_note_end_margin">16dp</dimen>
+	<dimen name="add_note_top_margin">32dp</dimen>
+	<dimen name="add_note_margin_between">12dp</dimen>
 </resources>

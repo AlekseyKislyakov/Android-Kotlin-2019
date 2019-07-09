@@ -3,5 +3,5 @@
 	<dimen name="padding_color_picker_out">30dp</dimen>
 	<dimen name="padding_color_picker">4dp</dimen>
 	<dimen name="padding_note_list">8dp</dimen>
-	<dimen name="color_picker_item_size">56dp</dimen>
+	<dimen name="color_picker_item_size">52dp</dimen>
 </resources>

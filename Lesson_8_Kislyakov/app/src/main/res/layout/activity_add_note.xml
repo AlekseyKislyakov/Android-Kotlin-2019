@@ -5,6 +5,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical"
+	android:id="@+id/linearLayoutAddNote"
 	tools:context=".activities.AddNoteActivity">
 	
 	<com.google.android.material.appbar.AppBarLayout
@@ -21,24 +22,30 @@
 	</com.google.android.material.appbar.AppBarLayout>
 	
 	<EditText
+		style="@style/AddNoteHeaderTextStyle"
 		android:id="@+id/editTextAddNoteHeader"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/add_note_top_margin"
+		android:layout_marginStart="@dimen/add_note_start_margin"
+		android:layout_marginEnd="@dimen/add_note_end_margin"
 		android:hint="@string/add_note_hint_header"
-		android:inputType="textMultiLine"/>
+		android:inputType="textCapSentences"
+		android:maxLines="1"
+		android:imeOptions="actionNext"
+		android:background="@android:color/transparent"/>
 	
 	<EditText
+		style="@style/AddNoteDescriptionTextStyle"
 		android:id="@+id/editTextAddNoteText"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/add_note_margin_between"
+		android:layout_marginStart="@dimen/add_note_start_margin"
+		android:layout_marginEnd="@dimen/add_note_end_margin"
 		android:hint="@string/add_note_hint_text"
-		android:inputType="textMultiLine" />
+		android:inputType="textCapSentences|textMultiLine"
+		android:background="@android:color/transparent"/>
 	
-	<androidx.recyclerview.widget.RecyclerView
-		android:id="@+id/colorPickerRecyclerView1"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
-	
-	</androidx.recyclerview.widget.RecyclerView>
 	
 </LinearLayout>
