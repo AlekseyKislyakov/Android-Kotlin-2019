@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
             DATABASE_NAME
         )
             .build()
-        
+
         val disposableSearch = createSearchDisposable(noteListAdapter, searchView)
         val disposable = createAllNotesDisposable(noteListAdapter)
 
@@ -150,15 +150,36 @@ class MainActivity : AppCompatActivity() {
                 .setPositiveButton(getString(R.string.long_click_dialog_archive)) { dialog, _ ->
                     dialog.cancel()
                     note.hidden = STATUS_HIDDEN
-                    rxUpdateDatabaseElement(note)
+                    rxDoSomething(note, ::update)
 
                 }
                 .setNegativeButton(getString(R.string.long_click_dialog_delete)) { dialog, _ ->
                     dialog.cancel()
-                    rxDeleteDatabaseElement(note)
+                    rxDoSomething(note, ::delete)
                 }.create()
                 .show()
         }
+    }
+
+    fun insert(note: Note){
+        noteDatabase.noteDao().insert(note)
+    }
+
+    fun delete(note: Note){
+        noteDatabase.noteDao().delete(note)
+    }
+
+    fun update(note: Note){
+        noteDatabase.noteDao().update(note)
+    }
+
+
+    private fun rxDoSomething(note: Note, function: (note: Note) -> Unit){
+        Flowable.fromCallable {
+            function(note)
+        }.subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe()
     }
 
     private fun rxInsertDatabaseElement(note: Note) {
@@ -209,7 +230,7 @@ class MainActivity : AppCompatActivity() {
                     if (data.hasExtra(NOTE_EXTRA)) {
                         val note = data.getParcelableExtra<Note>(NOTE_EXTRA)
                         if (!note.isEmpty()) {
-                            rxInsertDatabaseElement(note)
+                            rxDoSomething(note, ::insert)
                         }
                     }
                 }

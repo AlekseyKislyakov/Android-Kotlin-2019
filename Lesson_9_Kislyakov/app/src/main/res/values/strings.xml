@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Lesson_9_Kislyakov</string>
+	<string name="temp_in_saransk_string">temp in Saransk</string>
+	<string name="downloading_progress">Downloading ...</string>
+	<string name="unzipping_progress">Unzipping...</string>
+	<string name="download_service_title">Download service</string>
+	<string name="download_service_message">Downloading and unzipping file</string>
+	<string name="foreground_channel_name">Foreground Service Channel</string>
+	<string name="unzipping_button">Unzipping</string>
+	<string name="download_button">Download</string>
+	<string name="download_service_is_running">Service is already running</string>
+	<string name="toolbar_main_title">Services</string>
+	<string name="request_permission_string">Request permission</string>
+	<string name="permission_denied">Permission is not given. Pls give it in settings</string>
+	<string name="yes_string">Yep</string>
+	<string name="request_permission_in_setings">Request permission in settings?</string>
+</resources>
