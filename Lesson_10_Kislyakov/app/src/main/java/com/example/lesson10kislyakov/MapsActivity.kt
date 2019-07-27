@@ -99,6 +99,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         viewFlipper.displayedChild = STATE_DATA
         mMap = googleMap
+        mMap.setPadding(0,0,0,resources.getDimension(R.dimen.dimen_map_padding_bottom).toInt())
 
         requestPermissionWithRationale()
 
@@ -289,7 +290,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     @SuppressLint("MissingPermission")
     private fun setLocationEnabledOrMakeRequest() {
         if (!checkLocationPermission()
-        ) run {
+        ) {
             createLocationRequestPermission()
         } else {
             mMap.isMyLocationEnabled = true

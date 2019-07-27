@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Lesson_11_Kislyakov</string>
+    <string name="column_count_fail">You set wrong number of columns</string>
+</resources>

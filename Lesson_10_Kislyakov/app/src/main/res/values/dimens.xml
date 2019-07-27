@@ -6,4 +6,5 @@
     <dimen name="dimen_top_value">16dp</dimen>
     <dimen name="dimen_end_value">16dp</dimen>
     <dimen name="dimen_status_image_size">40dp</dimen>
+    <dimen name="dimen_map_padding_bottom">72dp</dimen>
 </resources>
