@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SPB bridges</string>
+    <string name="toolbar_main_title">The Most SPB</string>
+    <string name="error_network">Не удалось загрузить данные</string>
+    <string name="error_button_retry">Повторить</string>
+	<string name="location_show_rationale">Location permission is needed to show your location</string>
+	<string name="string_ok">OK</string>
+	<string name="bridge_list_goto_map">Go to map</string>
+	<string name="map_goto_bridge_list">Go to list</string>
+	<string name="request_permission_in_setings">The location permission is not given. Go to Settings and allow it!</string>
+	<string name="settings_string">Settings</string>
+</resources>

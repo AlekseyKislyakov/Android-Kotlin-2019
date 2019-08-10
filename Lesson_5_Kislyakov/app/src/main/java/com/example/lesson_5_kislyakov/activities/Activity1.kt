@@ -26,7 +26,7 @@ class Activity1 : AppCompatActivity() {
         }
 
         buttonGoto4From1.setOnClickListener {
-            startActivity(Activity4.createInstance(this, Long.toString(System.currentTimeMillis())))
+            startActivity(Activity4.createInstance(this, System.currentTimeMillis().toString()))
         }
 
         buttonGoto2From1.setOnClickListener {
